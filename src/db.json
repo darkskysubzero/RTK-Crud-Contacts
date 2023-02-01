@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "name": "Adam Marcus",
+      "email": "adam@gmail.com",
+      "contact": "0344223391",
+      "id": 1
+    },
+    {
+      "name": "John Wick",
+      "email": "john@gmail.com",
+      "contact": "0344223391",
+      "id": 2
+    },
+    {
+      "name": "Sam Sky",
+      "email": "alin@gmail.com",
+      "contact": "0344223391",
+      "id": 3
+    },
+    {
+      "name": "Bruce",
+      "email": "bruce@wayne.com",
+      "contact": "1111111111",
+      "id": 4
+    }
+  ]
+}

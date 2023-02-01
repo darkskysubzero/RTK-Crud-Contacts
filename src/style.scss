@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: none;
+    padding: 0 56px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 7px;
+    background-color: #0070f3;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        background: rgba(0, 118, 255, 0.9);
+    }
+
+    &.green {
+        background-color: #006f3b;
+
+        &:hover {
+            background-color: #019133;
+        }
+    }
+
+
+    &.red {
+        background-color: #f32d00;
+
+        &:hover {
+            background-color: #911201;
+        }
+    }
+
+
+}
+
+.App {
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.data {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+
+    .data-table {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solid rgb(0, 170, 0);
+
+
+        .default-row {
+            display: flex;
+            background: #2d8344;
+            padding: 1rem;
+            color: white;
+
+            .info {
+                display: flex;
+                flex: 2;
+                justify-content: space-between;
+            }
+
+            .action-info {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+
+        }
+
+        .data-row {
+            &:nth-child(even) {
+                background: rgb(234, 234, 234);
+            }
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 1rem;
+            color: rgb(0, 0, 0);
+            flex-wrap: wrap;
+
+            .data-info {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                flex: 2;
+            }
+
+            .action-buttons {
+                flex-wrap: wrap;
+                display: flex;
+                flex: 1;
+                gap: 5px;
+
+                button {
+                    padding: 0px 10px;
+                }
+
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+    }
+}
+
+
+.add-contact {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+
+    form {
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+
+        input {
+            padding: 0.5rem 1rem;
+        }
+    }
+
+}
