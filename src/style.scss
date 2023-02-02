@@ -160,3 +160,37 @@ button {
     }
 
 }
+
+.single-contact {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+
+    h1 {
+        font-size: 1.5rem;
+        background: #141414;
+        color: white;
+        padding: 0.5rem;
+        width: 50%;
+        font-weight: lighter;
+        border-radius: 20px;
+    }
+
+    a {
+        background: #0070f3;
+        text-decoration: none;
+        color: white;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        transition: all .5s ease;
+
+        &:hover {
+            background: darken($color: #0070f3, $amount: 10%);
+        }
+    }
+}

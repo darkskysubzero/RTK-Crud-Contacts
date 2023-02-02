@@ -30,6 +30,11 @@ export const contactsApi = createApi({
                 method: "DELETE"
             }),
             invalidatesTags: ["Contact"]
+        }),
+
+        getSingleContact: builder.query({
+            query: (id) => `contacts/${id}`,
+            providesTags: ["Contact"]
         })
     })
 })
@@ -38,5 +43,6 @@ export const contactsApi = createApi({
 export const {
     useGetAllContactsQuery,
     useAddContactMutation,
-    useDeleteContactMutation
+    useDeleteContactMutation,
+    useGetSingleContactQuery
 } = contactsApi; 
