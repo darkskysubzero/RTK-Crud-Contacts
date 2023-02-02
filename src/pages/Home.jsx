@@ -64,7 +64,7 @@ const Home = () => {
                                     <p>{contact.contact}</p>
                                 </div>
                                 <div className="action-buttons">
-                                    <Link to={`/edit/:${contact.id}`}><button className='green'>Edit</button></Link>
+                                    <Link to={`/edit/${contact.id}`}><button className='green'>Edit</button></Link>
                                     <button className='red' onClick={() => handleDelete(contact.id)}>Delete</button>
                                     <Link to={`/info/${contact.id}`}><button>View</button></Link>
                                 </div>
