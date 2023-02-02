@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useGetAllContactsQuery } from '../services/contactsApi'
+import { useDeleteContactMutation, useGetAllContactsQuery, } from '../services/contactsApi'
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,13 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 const Home = () => {
 
     const { data, error, isSuccess, refetch, isError } = useGetAllContactsQuery();
+    const [deleteContact] = useDeleteContactMutation();
 
     useEffect(() => {
-
-        //when pages loads refetch it
-        if (!isError) {
-            refetch();
-        }
 
         const timer = setTimeout(() => {
             if (isSuccess) {
@@ -26,14 +22,20 @@ const Home = () => {
             }
         }, 100)
 
-
-
         return () => {
             clearTimeout(timer);
         }
 
-    }, [error, isSuccess]);
+    }, [error, isSuccess, isError]);
 
+
+
+    const handleDelete = async (id) => {
+        if (window.confirm("Are you sure that you want to delete this contact?")) {
+            await deleteContact(id);
+            toast.success("Contact deleted successfully!", { toastId: "success" });
+        }
+    }
 
     return (
         <div>
@@ -63,7 +65,7 @@ const Home = () => {
                                 </div>
                                 <div className="action-buttons">
                                     <Link to={`/edit/:${contact.id}`}><button className='green'>Edit</button></Link>
-                                    <Link to={`/delete/:${contact.id}`}><button className='red'>Delete</button></Link>
+                                    <button className='red' onClick={() => handleDelete(contact.id)}>Delete</button>
                                     <Link to={`/view/:${contact.id}`}><button>View</button></Link>
                                 </div>
                             </div>
