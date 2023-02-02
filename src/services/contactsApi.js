@@ -5,9 +5,11 @@ export const contactsApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:5000/"
     }),
+    tagTypes: ["Contact"],
     endpoints: (builder) => ({
         getAllContacts: builder.query({
             query: () => "contacts",
+            providesTags: ["Contact"]
         }),
 
         addContact: builder.mutation({
@@ -18,10 +20,23 @@ export const contactsApi = createApi({
                 headers: {
                     "Content-type": "application/json"
                 }
-            })
+            }),
+            invalidatesTags: ["Contact"]
+        }),
+
+        deleteContact: builder.mutation({
+            query: (id) => ({
+                url: `contacts/${id}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: ["Contact"]
         })
     })
 })
 
 
-export const { useGetAllContactsQuery, useAddContactMutation } = contactsApi; 
+export const {
+    useGetAllContactsQuery,
+    useAddContactMutation,
+    useDeleteContactMutation
+} = contactsApi; 
